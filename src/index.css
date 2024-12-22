@@ -63,3 +63,26 @@ h1 {
     background-color: #f9f9f9;
   }
 }
+
+/* Hides scrollbar but still allows scrolling for the specific div */
+.hide-scrollbar {
+  overflow: auto; /* Ensure scrolling is enabled */
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  width: 0px;  /* For vertical scrollbar */
+  height: 0px; /* For horizontal scrollbar */
+}
+
+.hide-scrollbar::-webkit-scrollbar-thumb {
+  background-color: transparent;
+}
+
+.hide-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Firefox */
+.hide-scrollbar {
+  scrollbar-width: none; /* Hides scrollbar in Firefox */
+}

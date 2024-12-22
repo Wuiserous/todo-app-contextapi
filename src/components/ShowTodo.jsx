@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import TodoContext from "../context/TodoContext";
 import { MdEdit } from "react-icons/md";
 import { FaCheck } from "react-icons/fa";
@@ -64,9 +64,10 @@ export default function ShowTodo() {
     
 
     return (
-        <div className="flex flex-col gap-2">
+        <div className="flex flex-col hide-scrollbar h-full overflow-auto gap-2"
+        >
             {todos.map((todo, index) => (
-                <div key={index} className={`w-full p-4 shadow-xl hover:bg-opacity-35 rounded transform transition delay-50 ease-in ${todo.completed? 'bg-[#4CAF50] bg-opacity-25': 'bg-[#242424]'} flex items-center justify-between`}>
+                <div key={index} id={todo.id} className={`w-full p-4 shadow-xl hover:bg-opacity-35 rounded transform transition delay-50 ease-in ${todo.completed? 'bg-[#4CAF50] bg-opacity-25': 'bg-[#242424]'} flex items-center justify-between`}>
                     <div className="flex h-5 items-center justify-center gap-2">
                     <input type="checkbox" checked={todo.completed} onChange={() => handleCheckTodo(todo.id)} />
                     {isEditing === todo.id ? (<input type="text" className="border border-l-transparent border-t-transparent outline-none focus:outline-none  -ml-[0.9px] border-white/25 w-[480px] pl-0  text-xl bg-transparent" value={updateTodo} onChange={(e) => setUpdateTodo(e.target.value)}/>):(
@@ -92,3 +93,4 @@ export default function ShowTodo() {
         </div>
     )
 }
+
