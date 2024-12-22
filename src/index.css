@@ -22,6 +22,14 @@ background-size: 20px 20px;
   -moz-osx-font-smoothing: grayscale;
 }
 
+.headline{
+  background-color: #388E3C;
+opacity: 0.6;
+background-image:  radial-gradient(#ffffff 0.7000000000000001px, transparent 0.7000000000000001px), radial-gradient(#ffffff 0.7000000000000001px, #388E3C 0.7000000000000001px);
+background-size: 28px 28px;
+background-position: 0 0,14px 14px;
+}
+
 a {
   font-weight: 500;
   color: #646cff;
