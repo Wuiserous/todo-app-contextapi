@@ -5,6 +5,19 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}"
   ],
   theme: {
+    screens: {
+      'sm': '320px',
+      // => @media (min-width: 640px) { ... }
+
+      'md': '520px',
+      // => @media (min-width: 1024px) { ... }
+
+      'lg': '1024px',
+      // => @media (min-width: 1280px) { ... }
+
+      'xl': '1280px',
+      // => @media (min-width: 1280px) { ... }
+    },
     extend: {},
   },
   plugins: [],
